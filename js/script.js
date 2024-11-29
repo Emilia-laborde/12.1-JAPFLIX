@@ -19,7 +19,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 );
                 mostrarPeliculas(peliculasFiltradas);  
             }
-        });
+        })
+        .catch(error => console.error("Error al cargar los datos:", error));
+        
 
         function mostrarPeliculas(array) { 
             lista.innerHTML = ''; 
@@ -36,9 +38,9 @@ document.addEventListener("DOMContentLoaded", function() {
                         </div>
                         <div class="offcanvas-body">
                             <p>${pelicula.overview}</p>
-                            <p><strong>Géneros:</strong> ${pelicula.genres.map(genero => genero.name).join(', ')}</p>  // "Genres" a "Géneros"
-                            <p><strong>Año:</strong> ${pelicula.release_date.substring(0, 4)}</p>  // "Year" a "Año"
-                            <p><strong>Duración:</strong> ${pelicula.runtime} mins</p>  // "Runtime" a "Duración"
+                            <p><strong>Géneros:</strong> ${pelicula.genres.map(genero => genero.name).join(', ')}</p>  
+                            <p><strong>Año:</strong> ${pelicula.release_date.substring(0, 4)}</p>  
+                            <p><strong>Duración:</strong> ${pelicula.runtime} mins</p>
                         </div>
                     </div>`;
             });
