@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const lista = document.getElementById("lista");
 
         btnBuscar.addEventListener("click", function() {
-            const textoBusqueda = inputBuscar.value.toLowerCase();  // "searchText" a "textoBusqueda"
+            const textoBusqueda = inputBuscar.value.toLowerCase(); 
             if (textoBusqueda) {
                 const peliculasFiltradas = peliculas.filter(pelicula =>
                     pelicula.title.toLowerCase().includes(textoBusqueda) ||
